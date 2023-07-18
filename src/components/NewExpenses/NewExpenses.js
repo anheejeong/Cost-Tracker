@@ -7,7 +7,6 @@ const NewExpenses = (props) => {
             ...enteredExpenseData,
             id: Math.random().toString()
         }
-        //console.log(expenseData);
         props.onAddExpense(expenseData); // 부모(App.js) 함수 호출
     };
 
