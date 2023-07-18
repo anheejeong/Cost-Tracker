@@ -1,8 +1,22 @@
 import './ExpensesList.css'
+import ExpenseItem from './ExpenseItem'
 
-const ExpensesList = () => {
+
+const ExpensesList = (props) => {
+    if (props.expenses.length === 0) {
+        return <h2 className='expenses-list__fallback'>Found no expenses.</h2>
+    }
+
     return (
-        <p>No Expenses Found</p>
+        <ul className='expenses-list'>
+            {props.expenses.map((expense) => (
+                <ExpenseItem
+                    key={expense.id} // 아이템 식별 버그 fix
+                    title={expense.title}
+                    amount={expense.amount}
+                    date={expense.date} />
+            ))}
+        </ul>
     );
 }
 
