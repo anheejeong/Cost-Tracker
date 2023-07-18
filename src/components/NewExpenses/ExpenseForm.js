@@ -58,7 +58,7 @@ const ExpenseForm = (props) => {
         // 객체 생성
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         };
 
